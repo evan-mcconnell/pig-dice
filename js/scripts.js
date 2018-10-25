@@ -34,11 +34,18 @@ Players.prototype.turnScore = function() {
     this.turn += this.roll;
   } else {
     this.turn = 0;
+    $(".bd1").slideToggle();
+    $(".bd2").slideToggle();
   };
-  alert(this.roll);
+  $("#current-roll").text(this.roll);
   return this.turn;
 };
-
+Players.prototype.bigWinner = function () {
+  if (this.score >= 36) {
+    alert("YOU'RE THE BOSS! YOU'RE SCORE IS " + this.score);
+  } else {
+  }
+};
 
 Players.prototype.hold = function() {
   this.score += this.turn;
@@ -75,6 +82,9 @@ $(document).ready(function() {
     player1.turn = 0;
     $("#turnScore1").text(player1.turn);
     $("#scoreOne").text(player1.score);
+    player1.bigWinner();
+    $(".bd1").slideToggle();
+    $(".bd2").slideToggle();
   });
 
   $(".roll2").click(function(event) {
@@ -91,5 +101,8 @@ $(document).ready(function() {
     player2.turn = 0;
     $("#turnScore2").text(player2.turn);
     $("#scoreTwo").text(player2.score);
+    player2.bigWinner();
+    $(".bd1").slideToggle();
+    $(".bd2").slideToggle();
   });
 });
