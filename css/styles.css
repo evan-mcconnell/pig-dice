@@ -1,3 +1,11 @@
-.bd{
+.bd1{
   border: 2px solid red;
+  padding-bottom: 20px;
+  margin: 20px;
+}
+
+.bd2{
+  border: 2px solid red;
+  padding-bottom: 20px;
+  margin: 20px;
 }
