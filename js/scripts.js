@@ -27,7 +27,7 @@ function Players(roll, turn, score) {
 
 Players.prototype.rollDice = function() {
   this.roll = Math.floor(Math.random() * 6) + 1;
-}
+};
 
 Players.prototype.turnScore = function() {
   if (this.roll > 1) {
@@ -40,8 +40,9 @@ Players.prototype.turnScore = function() {
   $("#current-roll").text(this.roll);
   return this.turn;
 };
+
 Players.prototype.bigWinner = function () {
-  if (this.score >= 36) {
+  if (this.score >= 15) {
     alert("YOU'RE THE BOSS! YOU'RE SCORE IS " + this.score);
   } else {
   }
